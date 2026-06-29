@@ -127,6 +127,16 @@ em{font-style:italic}
   .jco-2col{grid-template-columns:1fr!important}
   .jco-grid-min{grid-template-columns:1fr!important}
 }
+/* ── Responsive: tablet (≤900) ── */
+@media(max-width:900px){
+  div[style*="minmax(340px"]{grid-template-columns:1fr 1fr!important}
+  footer .jco-grid-min{grid-template-columns:1fr 1fr!important}
+}
+/* ── Responsive: phone (≤600) ── */
+@media(max-width:600px){
+  div[style*="minmax(340px"]{grid-template-columns:1fr!important}
+  footer .jco-grid-min{grid-template-columns:1fr!important}
+}
 </style>
 </head>
 <body>
