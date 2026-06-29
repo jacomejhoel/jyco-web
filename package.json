@@ -1,0 +1,15 @@
+{
+  "name": "jyco-web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-site.mjs",
+    "catalogo": "node scripts/generate-catalog.mjs",
+    "ads": "node scripts/generate-ads.mjs",
+    "social": "node scripts/generate-social.mjs"
+  },
+  "dependencies": {
+    "openai": "^6.44.0",
+    "sharp": "^0.35.1"
+  }
+}
