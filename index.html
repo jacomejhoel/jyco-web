@@ -131,6 +131,12 @@ em{font-style:italic}
   footer .jco-2c{grid-template-columns:1fr!important}
   [data-q-form]{grid-template-columns:1fr!important}
 }
+/* ── Responsive: selector de servicios (Familias / Mosaico / Índice) ── */
+@media(max-width:720px){
+  #sv-head{grid-template-columns:1fr!important;gap:1.25rem!important}
+  #sv-pills{width:100%}
+  #sv-pills button{flex:1 1 0;text-align:center;white-space:nowrap;padding:0.6rem 0.4rem!important;letter-spacing:0.05em!important}
+}
 </style>
 </head>
 <body>
@@ -215,13 +221,13 @@ Cal("ui",{"hideEventTypeDetails":false,"layout":"month_view"});
 <!-- ═══ SERVICIOS ═══ -->
 <section id="servicios" style="background:var(--dk);color:var(--pp);padding:var(--sp) 0">
   <div style="max-width:var(--mw);margin:0 auto;padding:0 var(--pd)">
-    <div style="display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;margin-bottom:3rem;flex-wrap:wrap">
+    <div id="sv-head" style="display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;margin-bottom:3rem">
       <div>
         <span data-ri="0" style="display:block;font-family:var(--sans);font-size:0.7rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:var(--g);margin-bottom:1.2rem">Qué hacemos</span>
         <h2 data-ri="1" data-split="blur" style="font-family:var(--serif);font-weight:300;font-size:clamp(2rem,4vw,3.8rem);line-height:1.05;color:var(--pp);margin-bottom:1rem">Trabajamos sobre tus procesos.</h2>
         <p data-ri="2" style="font-family:var(--sans);font-size:1rem;color:var(--st);line-height:1.65;max-width:52ch">Elige el área donde más te duele. Explora cada servicio para ver cómo intervenimos.</p>
       </div>
-      <div data-ri="3" style="display:flex;gap:2px;align-self:end">
+      <div id="sv-pills" data-ri="3" style="display:flex;gap:2px;align-self:end">
         <button type="button" id="sv-pill-familias" data-sv="familias">Familias</button>
         <button type="button" id="sv-pill-mosaico" data-sv="mosaico">Mosaico</button>
         <button type="button" id="sv-pill-indice" data-sv="indice">Índice</button>
