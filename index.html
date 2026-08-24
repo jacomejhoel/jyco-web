@@ -85,7 +85,7 @@
   --mw:1280px; --pd:clamp(1.25rem,5vw,5rem); --sp:clamp(5rem,9vw,9rem);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{font-family:var(--sans);background:var(--dk);color:var(--pp);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
@@ -116,8 +116,31 @@ em{font-style:italic}
 .jco-faq-q:hover{color:var(--g)}
 #jco-wa-float:hover{transform:translateY(-3px) scale(1.05)}
 @media(max-width:640px){
+  :root{--sp:4.5rem}
   .jco-2c{grid-template-columns:1fr!important}
   #jco-win-indicator{display:none}
+  #jco-nav{padding:calc(0.9rem + env(safe-area-inset-top)) 1.25rem 0.9rem!important}
+  #jco-nav>a:first-child{height:36px!important;z-index:110}
+  #jco-logo-light{opacity:1!important}
+  #jco-logo-dark{opacity:0!important}
+  #jco-nav-links{padding:calc(5rem + env(safe-area-inset-top)) 1.5rem calc(2rem + env(safe-area-inset-bottom));overflow-y:auto}
+  #top{min-height:100svh!important;height:auto!important;align-items:flex-start!important;padding-top:calc(68px + env(safe-area-inset-top))!important}
+  .jco-hero-content{min-height:calc(100svh - 68px - env(safe-area-inset-top))!important;padding:2rem 1.25rem calc(2.5rem + env(safe-area-inset-bottom))!important;display:flex;flex-direction:column;justify-content:center}
+  .jco-hero-kicker{font-size:0.62rem!important;line-height:1.5!important;letter-spacing:0.18em!important;margin-bottom:1.25rem!important}
+  .jco-hero-title{font-size:2.65rem!important;line-height:1!important;letter-spacing:0!important;max-width:100%!important;margin-bottom:1.4rem!important}
+  .jco-hero-lead{font-size:0.98rem!important;line-height:1.55!important;margin-bottom:1rem!important}
+  .jco-hero-proof{font-size:0.86rem!important;line-height:1.55!important;margin-bottom:1.75rem!important}
+  .jco-hero-actions,.jco-contact-actions{display:grid!important;grid-template-columns:1fr!important;width:100%;gap:0.75rem!important}
+  .jco-hero-actions>a,.jco-contact-actions>a{width:100%;min-height:52px;justify-content:center;text-align:center;padding:0.9rem 1rem!important;font-size:0.76rem!important;line-height:1.3;letter-spacing:0.04em!important}
+  .jco-hero-scroll{display:none!important}
+  .jco-servcard>div:first-child{height:190px!important}
+  .jco-servcard>div:last-child{padding:1.6rem!important}
+  #diferenciador{min-height:0!important}
+  #jco-modal{padding:max(0.75rem,env(safe-area-inset-top)) 0.75rem max(0.75rem,env(safe-area-inset-bottom))!important}
+  #jco-modal [data-m-dlg]{max-height:calc(100svh - 1.5rem);overflow-y:auto}
+  #jco-modal [data-m-img]{height:190px!important}
+  #jco-modal [data-m-close]{top:0.75rem!important;right:0.75rem!important;background:rgba(240,237,231,0.94)!important;color:var(--ink)!important;box-shadow:0 2px 14px rgba(13,15,17,0.2)}
+  #jco-wa-float{display:none!important}
 }
 /* ── Responsive: tablet (≤900) ── */
 @media(max-width:900px){
@@ -143,6 +166,11 @@ em{font-style:italic}
   #diferenciador > div:first-child > div:nth-child(2){background:rgba(13,15,17,0.9)!important}
   #jco-wa-float{opacity:0;visibility:hidden;pointer-events:none}
   #jco-wa-float.jco-visible{opacity:1;visibility:visible;pointer-events:auto}
+}
+@media(max-width:360px){
+  .jco-hero-title{font-size:2.35rem!important}
+  .jco-hero-content{padding-left:1rem!important;padding-right:1rem!important}
+  .jco-hero-kicker{font-size:0.58rem!important;letter-spacing:0.15em!important}
 }
 </style>
 </head>
@@ -176,17 +204,17 @@ em{font-style:italic}
     <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(13,15,17,0.97) 0%,rgba(13,15,17,0.74) 38%,rgba(13,15,17,0.5) 72%,rgba(13,15,17,0.4) 100%)"></div>
     <div style="position:absolute;inset:0;background:rgba(13,15,17,0.22)"></div>
   </div>
-  <div style="position:relative;z-index:1;width:100%;max-width:var(--mw);margin:0 auto;padding:0 var(--pd);padding-bottom:clamp(4rem,8vw,7rem)">
-    <span data-ri="0" style="display:block;font-family:var(--sans);font-size:0.7rem;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;color:var(--g);margin-bottom:2rem">01 — Consultoría Industrial Especializada en Automatización con IA · Ecuador</span>
-    <h1 data-ri="1" data-split="grad" style="font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,6.5vw,7.5rem);line-height:1.03;letter-spacing:-0.02em;color:var(--pp);max-width:18ch;margin-bottom:2.5rem">La IA no arregla el desorden. <em style="color:var(--g)">Lo multiplica.</em></h1>
-    <p data-ri="2" style="font-family:var(--sans);font-size:clamp(1rem,1.4vw,1.18rem);color:rgba(240,237,231,0.72);max-width:52ch;margin-bottom:2rem;line-height:1.7;font-weight:300">Primero ingeniería: ordenamos y estandarizamos tu proceso. <strong style="color:var(--pp);font-weight:600">Solo entonces lo automatizamos con IA —y lo dejamos bajo control.</strong></p>
-    <p data-ri="3" style="font-family:var(--sans);font-size:0.95rem;color:rgba(240,237,231,0.5);max-width:48ch;margin-bottom:3rem;line-height:1.7;font-weight:300">Mejorar · Automatizar · Controlar. En ese orden, con evidencia y bajo gobernanza ISO 42001.</p>
-    <div data-ri="4" style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center">
+  <div class="jco-hero-content" style="position:relative;z-index:1;width:100%;max-width:var(--mw);margin:0 auto;padding:0 var(--pd);padding-bottom:clamp(4rem,8vw,7rem)">
+    <span class="jco-hero-kicker" data-ri="0" style="display:block;font-family:var(--sans);font-size:0.7rem;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;color:var(--g);margin-bottom:2rem">01 — Consultoría Industrial Especializada en Automatización con IA · Ecuador</span>
+    <h1 class="jco-hero-title" data-ri="1" data-split="grad" style="font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,6.5vw,7.5rem);line-height:1.03;letter-spacing:-0.02em;color:var(--pp);max-width:18ch;margin-bottom:2.5rem">La IA no arregla el desorden. <em style="color:var(--g)">Lo multiplica.</em></h1>
+    <p class="jco-hero-lead" data-ri="2" style="font-family:var(--sans);font-size:clamp(1rem,1.4vw,1.18rem);color:rgba(240,237,231,0.72);max-width:52ch;margin-bottom:2rem;line-height:1.7;font-weight:300">Primero ingeniería: ordenamos y estandarizamos tu proceso. <strong style="color:var(--pp);font-weight:600">Solo entonces lo automatizamos con IA —y lo dejamos bajo control.</strong></p>
+    <p class="jco-hero-proof" data-ri="3" style="font-family:var(--sans);font-size:0.95rem;color:rgba(240,237,231,0.5);max-width:48ch;margin-bottom:3rem;line-height:1.7;font-weight:300">Mejorar · Automatizar · Controlar. En ese orden, con evidencia y bajo gobernanza ISO 42001.</p>
+    <div class="jco-hero-actions" data-ri="4" style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center">
       <a href="https://wa.me/593987948342?text=Hola%20J%26Co%2C%20quiero%20agendar%20un%20diagn%C3%B3stico%20para%20recuperar%20el%20control%20de%20mi%20operaci%C3%B3n." target="_blank" rel="noopener" class="jco-btn-gold" style="display:inline-flex;align-items:center;gap:0.6rem;padding:1rem 2.2rem;background:var(--g);color:var(--dk);font-family:var(--sans);font-size:0.88rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;border:none;cursor:pointer;transition:background 0.3s,transform 0.3s">Agenda tu diagnóstico <span>→</span></a>
       <a href="https://wa.me/593987948342?text=Hola%20J%26Co%2C%20quiero%20recuperar%20el%20control%20de%20mi%20operaci%C3%B3n%20con%20automatizaci%C3%B3n%20e%20IA." target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.6rem;padding:1rem 2.2rem;background:var(--pp);color:var(--dk);border:1px solid var(--pp);font-family:var(--sans);font-size:0.88rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;transition:background 0.3s,transform 0.3s">Escríbenos por WhatsApp</a>
     </div>
   </div>
-  <div style="position:absolute;bottom:2rem;right:var(--pd);display:flex;align-items:center;gap:0.8rem;z-index:1">
+  <div class="jco-hero-scroll" style="position:absolute;bottom:2rem;right:var(--pd);display:flex;align-items:center;gap:0.8rem;z-index:1">
     <div style="width:36px;height:1px;background:rgba(197,160,89,0.45)"></div>
     <span style="font-family:var(--sans);font-size:0.6rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:rgba(240,237,231,0.35)">Desliza</span>
   </div>
@@ -403,7 +431,7 @@ em{font-style:italic}
     <h2 data-ri="1" data-split="grad" style="font-family:var(--serif);font-weight:300;font-size:clamp(2.2rem,5vw,5.5rem);line-height:1.04;color:var(--pp);max-width:18ch;margin:0 auto 1.5rem">Recupera el <em style="color:var(--g)">control.</em></h2>
     <p data-ri="2" style="font-family:var(--sans);font-size:1.05rem;color:var(--st);line-height:1.65;max-width:50ch;margin:0 auto 1rem">Cuéntanos sobre tu operación. La conversación inicial es gratuita y sin compromiso.</p>
     <p data-ri="3" style="font-family:var(--sans);font-size:0.9rem;color:rgba(240,237,231,0.4);line-height:1.6;max-width:46ch;margin:0 auto 3rem">Cada operación es distinta. La cotización sale del diagnóstico, no de una tabla.</p>
-    <div data-ri="4" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+    <div class="jco-contact-actions" data-ri="4" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
       <a href="https://wa.me/593987948342?text=Hola%20J%26Co%2C%20quiero%20agendar%20un%20diagn%C3%B3stico%20para%20recuperar%20el%20control%20de%20mi%20operaci%C3%B3n." target="_blank" rel="noopener" class="jco-btn-gold" style="display:inline-flex;align-items:center;gap:0.6rem;padding:1.1rem 2.5rem;background:var(--g);color:var(--dk);font-family:var(--sans);font-size:0.92rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;border:none;cursor:pointer;transition:background 0.3s,transform 0.3s">Agenda tu diagnóstico →</a>
       <a href="https://wa.me/593987948342?text=Hola%20J%26Co%2C%20quiero%20recuperar%20el%20control%20de%20mi%20operaci%C3%B3n%20con%20automatizaci%C3%B3n%20e%20IA." target="_blank" rel="noopener" class="jco-btn-ghost" style="display:inline-flex;align-items:center;gap:0.6rem;padding:1.1rem 2.5rem;background:transparent;color:var(--pp);border:1px solid rgba(240,237,231,0.28);font-family:var(--sans);font-size:0.92rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;transition:background 0.3s">WhatsApp</a>
     </div>
